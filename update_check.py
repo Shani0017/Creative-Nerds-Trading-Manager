@@ -6,7 +6,7 @@ path here returns None rather than raising."""
 import json
 import urllib.request
 
-APP_VERSION = "1.0.6"
+APP_VERSION = "1.1.0"
 GITHUB_REPO = "Shani0017/Creative-Nerds-Trading-Manager"
 
 
