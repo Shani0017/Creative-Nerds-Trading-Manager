@@ -56,4 +56,4 @@ if errorlevel 1 (
 del release_notes.txt
 
 echo.
-echo Done! %TAG% is now live: https://github.com/Shani0017/Thrive-Trading-Manager/releases/tag/%TAG%
+echo Done! %TAG% is now live: https://github.com/Shani0017/Creative-Nerds-Trading-Manager/releases/tag/%TAG%

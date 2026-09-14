@@ -7,7 +7,7 @@ import json
 import urllib.request
 
 APP_VERSION = "1.0.6"
-GITHUB_REPO = "Shani0017/Thrive-Trading-Manager"
+GITHUB_REPO = "Shani0017/Creative-Nerds-Trading-Manager"
 
 
 def parse_version(v: str) -> tuple:

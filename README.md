@@ -6,7 +6,7 @@
 
 ## ⬇ Download
 
-**[Download the latest version](https://github.com/Shani0017/Thrive-Trading-Manager/releases/latest)** — click the `.exe` file under "Assets" on that page.
+**[Download the latest version](https://github.com/Shani0017/Creative-Nerds-Trading-Manager/releases/latest)** — click the `.exe` file under "Assets" on that page.
 
 No installation, no setup — just open [MetaTrader 5](https://www.metatrader5.com/) and log into your account first, then double-click the downloaded file. That's it.
 
