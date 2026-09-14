@@ -83,7 +83,7 @@ def main():
             error_root = tk.Tk()
             error_root.withdraw()
             messagebox.showerror(
-                "THRIVE Trade Manager — Startup Error",
+                "Creative Nerd's Trading Manager — Startup Error",
                 "The app failed to start.\n\n" + error_text +
                 f"\n\nA log file was saved at:\n{log_path}",
             )

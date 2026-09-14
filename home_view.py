@@ -28,7 +28,7 @@ class HomeScreen:
 
     def __init__(self, root, on_open_manager, on_open_journal):
         self.root = root
-        self.root.title("THRIVE Trade Manager")
+        self.root.title("Creative Nerd's Trading Manager")
         self.root.geometry(f"{self.BASE_WIDTH}x{self.BASE_HEIGHT}")
         self.root.minsize(640, 440)
         self.root.configure(fg_color=BG)
@@ -55,7 +55,7 @@ class HomeScreen:
             self._logo_image = ctk.CTkImage(self._logo_img_raw, size=self.BASE_LOGO_SIZE)
             self.logo_label = ctk.CTkLabel(self.center, image=self._logo_image, text="")
         else:
-            self.logo_label = ctk.CTkLabel(self.center, text="THRIVE", text_color=TEXT,
+            self.logo_label = ctk.CTkLabel(self.center, text="Creative Nerd's", text_color=TEXT,
                                             font=ctk.CTkFont(size=28, weight="bold"))
         self.logo_label.pack(pady=(0, 20))
 

@@ -19,7 +19,7 @@ class TradeJournalApp:
         self.root = root
         self.mt5 = mt5
         self.on_home = on_home
-        self.root.title("THRIVE Trading Journal")
+        self.root.title("Creative Nerd's Trading Journal")
         self.root.geometry("1120x760")
         # 488px is the exact point below which the table's own hint label
         # starts getting silently clipped (re-measured after bumping up

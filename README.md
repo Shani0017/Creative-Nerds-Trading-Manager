@@ -1,4 +1,4 @@
-# THRIVE Trade Manager
+# Creative Nerd's Trading Manager
 
 **A free, one-click trade management and journaling tool for MetaTrader 5.** Move your stop loss to breakeven, close half a position, or set SL/TP — all in one click instead of hunting through MT5's own menus. Then see every closed trade automatically laid out with your win rate and P&L, no spreadsheet required.
 
@@ -18,7 +18,7 @@ No installation, no setup — just open [MetaTrader 5](https://www.metatrader5.c
 
 ## Why traders use it
 
-Managing a live trade in the standard MT5 terminal means several clicks through modify-order dialogs just to move your stop to breakeven. Reviewing your trading history means scrolling through MT5's own history tab with no notes, no win-rate summary, and no way to track *why* you took a trade. THRIVE Trade Manager fixes both:
+Managing a live trade in the standard MT5 terminal means several clicks through modify-order dialogs just to move your stop to breakeven. Reviewing your trading history means scrolling through MT5's own history tab with no notes, no win-rate summary, and no way to track *why* you took a trade. Creative Nerd's Trading Manager fixes both:
 
 - **Act faster on live trades** — breakeven, half-close, full-close, or a custom SL/TP in one click, with a live chart right next to the position so you can see price action while you decide.
 - **Actually learn from your history** — every closed trade, automatically reconstructed from MT5's own records, with running P&L and win-rate, filterable by date range and symbol.
@@ -76,7 +76,9 @@ app attaches to that running terminal, it does not log in on its own.
 build_exe.bat
 ```
 
-Produces a single file at `dist\THRIVE Trade Manager.exe`.
+Produces a single file at `dist\Creative Nerds Trading Manager.exe` (the
+apostrophe is dropped from the filename only, not the in-app title --
+PyInstaller's auto-generated .spec file breaks on it).
 
 ### Publishing a new release
 

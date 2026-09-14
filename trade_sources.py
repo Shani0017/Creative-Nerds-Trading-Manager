@@ -8,13 +8,17 @@ import os
 import sys
 
 SOURCES_FILENAME = "trade_sources.json"
-APP_FOLDER_NAME = "THRIVE Trade Manager"
+APP_FOLDER_NAME = "Creative Nerd's Trading Manager"
+_OLD_APP_FOLDER_NAME = "THRIVE Trade Manager"  # pre-rename (2026-09-14) AppData folder --
+                                                 # kept only so load_sources() can carry
+                                                 # forward anyone's already-saved tags.
 
 
 def _writable_path(filename: str) -> str:
-    """Where trade_sources.json actually lives: %APPDATA%\\THRIVE Trade
-    Manager\\ (e.g. C:\\Users\\<name>\\AppData\\Roaming\\THRIVE Trade
-    Manager), Windows' standard place for a per-user data file. Keeping
+    """Where trade_sources.json actually lives: %APPDATA%\\Creative Nerd's
+    Trading Manager\\ (e.g. C:\\Users\\<name>\\AppData\\Roaming\\Creative
+    Nerd's Trading Manager), Windows' standard place for a per-user data
+    file. Keeping
     it next to the .exe worked, but meant shipping the app to someone
     else was really shipping two files (the .exe and this JSON) if you
     wanted their saved sources to survive between runs -- AppData lets
@@ -45,22 +49,32 @@ def _legacy_path(filename: str) -> str:
     return os.path.join(base, filename)
 
 
+def _old_appdata_path(filename: str) -> str:
+    """Where trade_sources.json lived under the app's pre-rename AppData
+    folder name, kept only so a one-time migration in load_sources() can
+    carry forward anyone's already-saved tags from before the rename."""
+    appdata = os.getenv("APPDATA")
+    if not appdata:
+        return ""
+    return os.path.join(appdata, _OLD_APP_FOLDER_NAME, filename)
+
+
 def load_sources() -> dict:
     """Returns {position_id (str): source label (str)}. Missing/corrupt
     file -> empty dict, never raises -- a bad journal file must never stop
     the app from starting."""
     path = _writable_path(SOURCES_FILENAME)
     if not os.path.exists(path):
-        legacy = _legacy_path(SOURCES_FILENAME)
-        if os.path.exists(legacy):
-            try:
-                with open(legacy, "r", encoding="utf-8") as f:
-                    legacy_data = json.load(f)
-                if isinstance(legacy_data, dict):
-                    save_sources(legacy_data)
-                    return legacy_data
-            except Exception:
-                pass
+        for candidate in (_old_appdata_path(SOURCES_FILENAME), _legacy_path(SOURCES_FILENAME)):
+            if candidate and os.path.exists(candidate):
+                try:
+                    with open(candidate, "r", encoding="utf-8") as f:
+                        legacy_data = json.load(f)
+                    if isinstance(legacy_data, dict):
+                        save_sources(legacy_data)
+                        return legacy_data
+                except Exception:
+                    pass
     try:
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)

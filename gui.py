@@ -112,7 +112,7 @@ class TradeManagerApp:
         self.root = root
         self.mt5 = mt5
         self.on_home = on_home
-        self.root.title("THRIVE Trade Manager")
+        self.root.title("Creative Nerd's Trading Manager")
         self.root.geometry("1180x980")
         # The 4 fixed sections (topbar, positions, detail panel, footer) sum
         # to ~661px, and Account Overview's 2-column grid of 5 stats (see
@@ -221,7 +221,7 @@ class TradeManagerApp:
             self._logo_image = ctk.CTkImage(logo_img, size=(100, 36))
             ctk.CTkLabel(bar, image=self._logo_image, text="").pack(side="left", padx=(0, 20))
         except Exception:
-            ctk.CTkLabel(bar, text="THRIVE", text_color=TEXT,
+            ctk.CTkLabel(bar, text="Creative Nerd's", text_color=TEXT,
                          font=ctk.CTkFont(size=16, weight="bold")).pack(side="left", padx=(0, 20))
 
         self.status_badge = ctk.CTkFrame(bar, corner_radius=14, fg_color=AMBER_BG)
@@ -781,7 +781,7 @@ class TradeManagerApp:
         self.footer_ping_label = ctk.CTkLabel(bar, text="Ping: —", font=ctk.CTkFont(size=11),
                                                text_color=MUTED)
         self.footer_ping_label.pack(side="left", padx=(16, 0))
-        ctk.CTkLabel(bar, text="THRIVE Trade Manager", font=ctk.CTkFont(size=11),
+        ctk.CTkLabel(bar, text="Creative Nerd's Trading Manager", font=ctk.CTkFont(size=11),
                      text_color=MUTED).pack(side="right")
 
     # ------------------------------------------------------------------

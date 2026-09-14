@@ -17,14 +17,14 @@ if errorlevel 1 (
 )
 
 echo.
-echo [2/5] Building THRIVE Trade Manager.exe...
-if exist "dist\THRIVE Trade Manager.exe" del "dist\THRIVE Trade Manager.exe"
-pyinstaller --onefile --windowed --name "THRIVE Trade Manager" --icon "assets\icon.ico" --collect-data customtkinter --collect-data matplotlib --add-data "assets;assets" --exclude-module PyQt5 --exclude-module PyQt6 --exclude-module PySide2 --exclude-module PySide6 --exclude-module pandas --exclude-module scipy --exclude-module torch --exclude-module tensorflow --exclude-module IPython --exclude-module notebook main.py
+echo [2/5] Building Creative Nerds Trading Manager.exe...
+if exist "dist\Creative Nerds Trading Manager.exe" del "dist\Creative Nerds Trading Manager.exe"
+pyinstaller --onefile --windowed --name "Creative Nerds Trading Manager" --icon "assets\icon.ico" --collect-data customtkinter --collect-data matplotlib --add-data "assets;assets" --exclude-module PyQt5 --exclude-module PyQt6 --exclude-module PySide2 --exclude-module PySide6 --exclude-module pandas --exclude-module scipy --exclude-module torch --exclude-module tensorflow --exclude-module IPython --exclude-module notebook main.py
 if errorlevel 1 (
     echo Build failed -- aborting release.
     exit /b 1
 )
-if not exist "dist\THRIVE Trade Manager.exe" (
+if not exist "dist\Creative Nerds Trading Manager.exe" (
     echo Build did not produce an exe -- aborting release.
     exit /b 1
 )
@@ -48,7 +48,7 @@ if errorlevel 1 (
 
 echo.
 echo [5/5] Creating GitHub release %TAG% and uploading exe...
-gh release create %TAG% "dist\THRIVE Trade Manager.exe" --title "%TAG%" --notes-file release_notes.txt
+gh release create %TAG% "dist\Creative Nerds Trading Manager.exe" --title "%TAG%" --notes-file release_notes.txt
 if errorlevel 1 (
     echo gh release create failed -- check if %TAG% already exists ^(gh release list^).
     exit /b 1
